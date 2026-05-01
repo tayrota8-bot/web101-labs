@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Hello</title>
+    <meta charset="utf-8" />
+    <title>Hello</title>
+    <style>
+        body { font-family: sans-serif; padding: 2rem; }
+        button { padding: .5rem 1rem; }
+    </style>
 </head>
 <body>
-  <h1>Hello World</h1>
-   <p>This is my first webpage.<p>
+    <h1>Hello, Claude</h1>
+    <button id="go">Click me</button>
+    <p id="out"></p>
+<script>
+    const btn = document.getElementById("go");
+    const out = document.getElementById("out");
+    btn.addEventListener("click", () => {
+        out.textContent = "You clicked at " + new Date().toLocaleTimeString();
+    });
+    </script>
 </body>
 </html>
