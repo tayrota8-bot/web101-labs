@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3: Sorting an Array</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Task 3: Sorting an Array</h2>
+        
+        <div class="result-box">
+            <div class="label">Sample Array</div>
+            <div id="original-array" class="value"></div>
+        </div>
+
+        <div class="result-box">
+            <div class="label">Sample Output</div>
+            <div id="sorted-array" class="value">—</div>
+        </div>
+
+        <button class="btn-sort" onclick="sortArray()">Sort Array</button>
+    </div>
+
+    <script>
+        // Sample array from the prompt
+        var arr1 = [ 3, 8, 7, 6, 5, -4, 3, 2, 1 ];
+        
+        // Display the original array on page load
+        document.getElementById('original-array').innerText = arr1.join(', ');
+
+        function sortArray() {
+            // Bubble Sort Algorithm
+            for (var i = 0; i < arr1.length; i++) {
+                for (var j = 0; j < arr1.length - 1 - i; j++) {
+                    if (arr1[j] > arr1[j + 1]) {
+                        // Swap elements
+                        var temp = arr1[j];
+                        arr1[j] = arr1[j + 1];
+                        arr1[j + 1] = temp;
+                    }
+                }
+            }
+            
+            // Render the sorted array onto the screen
+            document.getElementById('sorted-array').innerText = arr1.join(', ');
+        }
+    </script>
+    
+</body>
+</html>
